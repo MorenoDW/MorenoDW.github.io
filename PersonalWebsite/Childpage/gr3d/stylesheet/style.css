@@ -142,6 +142,10 @@ img {vertical-align: middle;}
 }
 #footer {
   width: auto;
-  height: 10%;
-  background-color: #f2f2f2;
+  height: 20%;
+  background-color: #717171;
+}
+.linkedin{
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
 }
