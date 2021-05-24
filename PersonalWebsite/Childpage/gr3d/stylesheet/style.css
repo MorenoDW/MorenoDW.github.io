@@ -49,11 +49,7 @@
 }
 
 .grid-container {
-    margin-left: 20px; 
     align-self: center; 
-    margin-top: 20px; 
-    margin-right: 20px; 
-    margin-bottom: 20px;
 }
 #body {
     background-color:#536162;
