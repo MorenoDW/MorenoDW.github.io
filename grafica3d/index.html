@@ -7,7 +7,7 @@
 <link type="text/css" rel="stylesheet" href="stylesheet/style.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-  * {box-sizing: border-box;}
+ * {box-sizing: border-box;}
   .mySlides {display: none;}
   img {vertical-align: middle;}
   
@@ -140,11 +140,100 @@ a:active {
 #myBtn:hover {
   background-color: #555;
 }
+#myImg,#myImg1,#myImg2,#myImg3,#myImg4,#myImg5,#myImg6,#myImg7 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover, #myImg1:hover,#myImg2:hover,#myImg3:hover,#myImg4:hover,#myImg5:hover,#myImg6:hover,#myImg7:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
   </style>
 </head>
 <body style="font-family:Verdana;" id="body">
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
     <div id="container" class="container">
       <div style="background-color:#f3f4ed;padding:15px;text-align:center;">
         <div id="header" class="last">
@@ -218,14 +307,14 @@ a:active {
         <a href="http://vcg.isti.cnr.it/corsi/G3D_InfoUma/">- Corso di Grafica 3D per i beni culturali.</a>
         <hr class="solid">
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> <br />
-        <img src="skins/img/mn.JPG" alt="Maschera tipica Mamuthones nero" width= "295" height ="400">
+        <img id="myImg"src="skins/img/mn.JPG" alt="Maschera tipica Mamuthones nero" width= "295" height ="400">
         <h6>Nella figura, una maschera tipica Mamuthones nera</h6>
         <hr class="solid">
-        <img src="skins/img/sfilata.jpg" alt="Sfilata di Mamoiada" width= "295">
+        <img id="myImg1" src="skins/img/sfilata.jpg" alt="Sfilata di Mamoiada" width= "295">
         <h6>Nella figura, una sfilata di Mamoiada</h6>
         <hr class="solid">
           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br />
-        <img src="skins/img/screensh.PNG" alt="Screenshot modello 3d" width="295" height="400">
+        <img id="myImg2" src="skins/img/screensh.PNG" alt="Screenshot modello 3d" width="295" height="400">
         <h6>Nella figura, uno screenshot del modello 3d</h6>
         <hr class="solid">
       </div>
@@ -284,7 +373,7 @@ a:active {
           nell'ambito fotogrammetria da immagini.
         </p>
         <p>Dopo aver ottenuto una nuvola di punti soddisfaciente (Fig.1), il passo successivo era quello di creare una nuvola densa(Fig.2).</p>
-        <img src="skins/img/nuvola densa.JPG" alt="Nuvola densa" width= "284" height ="400">
+        <img id="myImg3" src="skins/img/nuvola densa.JPG" alt="Nuvola densa" width= "284" height ="400">
     <h6>Fig.2, la nuvola densa ottenuta in Metashape</h6>
     <hr class="solid">
     <p>Adesso non resta che fare il lungo e meticoloso lavoro di pulizia dei punti. Il software usato per questa attività è stato MeshLab. 
@@ -309,16 +398,16 @@ a:active {
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
       </div>
   <div class="right">
-    <img src="skins/img/nuvola.JPG" alt="Nuvola di punti" width= "284" height ="400">
+    <img id="myImg4" src="skins/img/nuvola.JPG" alt="Nuvola di punti" width= "284" height ="400">
     <h6>Fig.1, la nuvola di punti ottenuta in Metashape</h6>
     <hr class="solid">
-    <img src="skins/img/telecamereJPG.JPG" alt="Nuvola di punti con telecamere" width= "284" >
+    <img id="myImg5" src="skins/img/telecamereJPG.JPG" alt="Nuvola di punti con telecamere" width= "284" >
     <h6>Nella figura, la rappresentazione spaziale delle riprese con la camera.</h6>
     <hr class="solid">
-    <img src="skins/img/pulito.JPG" alt="Nuvola di punti pulita" width= "284" height ="400">
+    <img id="myImg6"src="skins/img/pulito.JPG" alt="Nuvola di punti pulita" width= "284" height ="400">
     <h6>Nella figura, la rappresentazione del modello 3D pulito in MeshLab.</h6> 
     <hr class="solid"><br /><br />
-    <img src="skins/img/nexus.JPG" alt="Modello nexus" width= "284" height ="400">
+    <img id="myImg7"src="skins/img/nexus.JPG" alt="Modello nexus" width= "284" height ="400">
     <h6>Fig.3, modello multirisoluzione generato tramite Nexus</h6>
   </div>
     </div>
@@ -379,6 +468,79 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-  </script>
-  
+// Get the modal
+var modal = document.getElementById("myModal");
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var img = document.getElementById("myImg1");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var img = document.getElementById("myImg2");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var img = document.getElementById("myImg3");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var img = document.getElementById("myImg4");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var img = document.getElementById("myImg5");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var img = document.getElementById("myImg6");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var img = document.getElementById("myImg7");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script> 
 </html>
